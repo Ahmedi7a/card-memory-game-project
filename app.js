@@ -1,3 +1,21 @@
+const cardsArray = [
+    { alt: "watermelon", imageUrl: "./images/fruit_1.jpg" },
+    { alt: "watermelon", imageUrl: "./images/fruit_1.jpg" },
+    { alt: "fruit2", imageUrl: "./images/fruit_2.jpg" },
+    { alt: "fruit2", imageUrl: "./images/fruit_2.jpg" },
+    { alt: "fruit3", imageUrl: "./images/fruit_3.jpg" },
+    { alt: "fruit3", imageUrl: "./images/fruit_3.jpg" },
+    { alt: "fruit4", imageUrl: "./images/fruit_4.jpg" },
+    { alt: "fruit4", imageUrl: "./images/fruit_4.jpg" },
+    { alt: "fruit5", imageUrl: "./images/fruit_5.jpg" },
+    { alt: "fruit5", imageUrl: "./images/fruit_5.jpg" },
+    { alt: "fruit6", imageUrl: "./images/fruit_6.jpg" },
+    { alt: "fruit6", imageUrl: "./images/fruit_6.jpg" },
+];
+// cardsArray.sort(( => Math.random() - 0.5)
+
+// func alt, url
+
 /*-------------------------------- Constants --------------------------------*/
 let firstCard, secondCard;
 /*-------------------------------- Variables --------------------------------*/
@@ -27,8 +45,8 @@ function flipCard(event) {
 
     checkMatch()
 
-    // console.log(firstCard)
-    // console.log(secondCard)
+    console.log(firstCard)
+    console.log(secondCard)
 
 }
 
@@ -59,6 +77,7 @@ function disableCards() {
     secondCard.removeEventListener('click', flipCard);
 
     resetBoard();
+    checkWin();
 }
 
 function unflipCards() {
@@ -78,7 +97,10 @@ function resetBoard() {
 }
 
 function checkWin(){
-    
+    const matchedCards=document.querySelectorAll('.memory-card .hide');
+    if(matchedCards.length===cardElement.length){
+        console.log('win')
+    }
 }
 
 
