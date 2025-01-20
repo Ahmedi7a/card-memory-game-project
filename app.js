@@ -12,17 +12,22 @@ const cardsArray = [
     { alt: "fruit6", imageUrl: "./images/fruit_6.jpg" },
     { alt: "fruit6", imageUrl: "./images/fruit_6.jpg" },
 ];
-// cardsArray.sort(( => Math.random() - 0.5)
+
 
 // func alt, url
 
 /*-------------------------------- Constants --------------------------------*/
 let firstCard, secondCard;
+let blockBoard= false;
+let countAttempt =0;
 /*-------------------------------- Variables --------------------------------*/
 
 /*------------------------ Cached Element References ------------------------*/
 const cardElement = document.querySelectorAll('.memory-card');
 // console.log(cardElement.length)
+const attemptE= document.querySelector('.attempt');
+const MessageE= document.querySelector('.message');
+
 /*----------------------------- Event Listeners -----------------------------*/
 for (let i = 0; i < cardElement.length; i++) {
     cardElement[i].addEventListener('click', flipCard);
@@ -32,6 +37,8 @@ for (let i = 0; i < cardElement.length; i++) {
 
 //if we press it will add a class hide ehich will hide the back-side
 function flipCard(event) {
+
+    if(blockBoard)return;
     event.target.classList.add('hide');
     const clickedCard = event.target;
     if (!firstCard) {
@@ -66,6 +73,14 @@ function checkMatch() {
     } else {
         // Cards do not match
         console.log('unmatched')
+        countAttempt++;
+        attemptE.textContent=`Attempt left ${countAttempt}/6`
+
+        if(countAttempt===6){
+            MessageE.textContent=`You lost`
+        }
+
+        console.log(countAttempt)
         unflipCards();
     }
 
@@ -81,6 +96,7 @@ function disableCards() {
 }
 
 function unflipCards() {
+    blockBoard=true;
     //it delays execution
     setTimeout(function () {
         // Remove the 'hide' class to show the back side of the cards
@@ -88,6 +104,7 @@ function unflipCards() {
         secondCard.classList.remove('hide');
 
         resetBoard();
+        blockBoard=false;
     }, 1000);
 }
 
@@ -99,7 +116,7 @@ function resetBoard() {
 function checkWin(){
     const matchedCards=document.querySelectorAll('.memory-card .hide');
     if(matchedCards.length===cardElement.length){
-        console.log('win')
+            MessageE.textContent=`You Win`
     }
 }
 
