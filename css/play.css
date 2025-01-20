@@ -8,6 +8,7 @@ body {
     height: 100vh;
     background-color: blue;
     display: flex;
+    /* gap: 20px; */
 }
 
 img {
@@ -59,4 +60,17 @@ h3 {
 .hide {
     display: none;
 
+}
+
+
+.texxxt {
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    align-items: center;
+    width: 35%;
+    height: 35%;
+    display: flex;
+    background-color: blueviolet;
+    justify-items: column;
 }
