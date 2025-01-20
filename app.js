@@ -28,7 +28,6 @@ const cardElement = document.querySelectorAll('.memory-card');
 const attemptE = document.querySelector('.attempt');
 const MessageE = document.querySelector('.message');
 const resetButton = document.querySelector('.reset-game');
-const backFaceCard=document.querySelector('.back-face')
 // console.log(resetButton)
 
 /*----------------------------- Event Listeners -----------------------------*/
@@ -43,6 +42,10 @@ resetButton.addEventListener('click', resetGame);
 function flipCard(event) {
 
     if (blockBoard) return;
+    //avoid clicking the opened one
+    if (event.target.classList.contains('front-face')) {
+        return; 
+    }
     event.target.classList.add('hide');
     const clickedCard = event.target;
     // console.log(clickedCard)
