@@ -28,6 +28,7 @@ const cardElement = document.querySelectorAll('.memory-card');
 const attemptE = document.querySelector('.attempt');
 const MessageE = document.querySelector('.message');
 const resetButton = document.querySelector('.reset-game');
+const backCard = document.querySelectorAll('.back-face')
 // console.log(resetButton)
 
 /*----------------------------- Event Listeners -----------------------------*/
@@ -38,7 +39,7 @@ resetButton.addEventListener('click', resetGame);
 
 /*-------------------------------- Functions --------------------------------*/
 
-function init(){
+function init() {
     shuffle();
 }
 
@@ -48,7 +49,7 @@ function flipCard(event) {
     if (blockBoard) return;
     //avoid clicking the opened one
     if (event.target.classList.contains('front-face')) {
-        return; 
+        return;
     }
     event.target.classList.add('hide');
     const clickedCard = event.target;
@@ -92,6 +93,10 @@ function checkMatch() {
             MessageE.textContent = `You lost`
             resetButton.disabled = false;
             blockBoard = true;
+            for (let i = 0; i < cardElement.length; i++) {
+                const backFace = cardElement[i].querySelector('.back-face');
+                if (backFace) backFace.classList.add('hide');
+            }
             return
         }
         // console.log(countAttempt)
@@ -138,12 +143,12 @@ function checkWin() {
     }
 }
 
-function shuffle(){
-  for (let i = 0; i < cardElement.length; i++) {
-    let firstCard=cardElement[i];
-    let reandomIdx= Math.floor(Math.random()*12);
-    firstCard.style.order = reandomIdx;  
-  }
+function shuffle() {
+    for (let i = 0; i < cardElement.length; i++) {
+        let firstCard = cardElement[i];
+        let reandomIdx = Math.floor(Math.random() * 12);
+        firstCard.style.order = reandomIdx;
+    }
 }
 
 function resetGame() {
