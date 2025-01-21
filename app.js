@@ -39,7 +39,7 @@ resetButton.addEventListener('click', resetGame);
 /*-------------------------------- Functions --------------------------------*/
 
 function init(){
-    //
+    shuffle();
 }
 
 //if we press it will add a class hide ehich will hide the back-side
@@ -139,8 +139,11 @@ function checkWin() {
 }
 
 function shuffle(){
-
-    //
+  for (let i = 0; i < cardElement.length; i++) {
+    let firstCard=cardElement[i];
+    let reandomIdx= Math.floor(Math.random()*12);
+    firstCard.style.order = reandomIdx;  
+  }
 }
 
 function resetGame() {
@@ -151,7 +154,7 @@ function resetGame() {
     resetButton.disabled = true;
     attemptE.textContent = `Attempts left: ${countAttempt}/6`;
     MessageE.textContent = `message`;
-    //add shuffle
+    shuffle();
 
     for (let i = 0; i < cardElement.length; i++) {
         const frontFace = cardElement[i].querySelector('.front-face');
@@ -161,4 +164,4 @@ function resetGame() {
         if (backFace) backFace.classList.remove('hide');
     }
 }
-// call init so shuffle
+init();
