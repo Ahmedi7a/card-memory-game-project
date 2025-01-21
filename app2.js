@@ -1,17 +1,3 @@
-// const cardsArray = [
-//     { alt: "watermelon", imageUrl: "./images/fruit_1.jpg" },
-//     { alt: "watermelon", imageUrl: "./images/fruit_1.jpg" },
-//     { alt: "fruit2", imageUrl: "./images/fruit_2.jpg" },
-//     { alt: "fruit2", imageUrl: "./images/fruit_2.jpg" },
-//     { alt: "fruit3", imageUrl: "./images/fruit_3.jpg" },
-//     { alt: "fruit3", imageUrl: "./images/fruit_3.jpg" },
-//     { alt: "fruit4", imageUrl: "./images/fruit_4.jpg" },
-//     { alt: "fruit4", imageUrl: "./images/fruit_4.jpg" },
-//     { alt: "fruit5", imageUrl: "./images/fruit_5.jpg" },
-//     { alt: "fruit5", imageUrl: "./images/fruit_5.jpg" },
-//     { alt: "fruit6", imageUrl: "./images/fruit_6.jpg" },
-//     { alt: "fruit6", imageUrl: "./images/fruit_6.jpg" },
-// ];
 
 
 // func alt, url
@@ -37,7 +23,7 @@ for (let i = 0; i < cardElement.length; i++) {
     cardElement[i].addEventListener('click', flipCard);
 }
 resetButton.addEventListener('click', resetGame);
-nextLevelB.addEventListener('click',nextLevel);
+
 
 /*-------------------------------- Functions --------------------------------*/
 
@@ -141,7 +127,6 @@ function checkWin() {
         nextLevelB.disabled=false;
         resetButton.disabled = false;
         blockBoard = true;
-        
         return
 
     }
@@ -173,8 +158,6 @@ function resetGame() {
         if (backFace) backFace.classList.remove('hide');
     }
 }
-function nextLevel(){
-    window.location.href = 'level2.html';
-}
+
 
 init();

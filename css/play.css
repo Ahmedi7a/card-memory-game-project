@@ -45,7 +45,7 @@ img {
     padding: 20px;
     position: absolute;
     border-radius: 5px;
-    background-color: rgb(231, 234, 215);
+    background-color: rgba(230,231,233,255);
 
 }
 
@@ -88,4 +88,10 @@ h3 {
 .message{
     margin-top: 40px;
 
+}
+a{
+    color: white;
+}
+a:hover{
+    color: brown;
 }
