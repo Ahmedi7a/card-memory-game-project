@@ -4,6 +4,9 @@
 
 Card Memory Game is an engaging and interactive browser-based game designed to challenge your memory skills. The objective is to match pairs of cards by flipping them over and remembering their positions. The game includes multiple levels of increasing difficulty. Successfully completing one level unlocks the next, offering a continuous and rewarding gameplay experience. Additionally, the game tracks your attempts, adding an extra layer of challenge as you aim to complete each level with the fewest possible moves.
 
+## Planing and requirments:
+https://trello.com/b/wsW2AptK/project-1-planning-card-memory-game
+
 ## Link for the game (try it):
 https://ahmedi7a.github.io/card-memory-game-project/
 
