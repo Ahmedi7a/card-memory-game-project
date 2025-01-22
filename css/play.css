@@ -103,6 +103,7 @@ a:hover{
 .con {
     /* background-color: aqua; */
     display: flex;
+    align-items: center;
     width: 90%;
 }
 

@@ -147,7 +147,7 @@ function resetGame() {
     blockBoard = false;
     resetButton.disabled = true;
     attemptE.textContent = `Attempts left: ${countAttempt}/6`;
-    MessageE.textContent = `message`;
+    MessageE.textContent = `Lets see if you can win`;
     shuffle();
 
     for (let i = 0; i < cardElement.length; i++) {
