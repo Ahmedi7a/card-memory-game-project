@@ -72,7 +72,7 @@ function checkMatch() {
         attemptE.textContent = `Attempts left: ${countAttempt}/6`
 
         if (countAttempt === 6) {
-            MessageE.textContent = `You lost`
+            MessageE.textContent = `You lost, try again`
             resetButton.disabled = false;
             blockBoard = true;
             for (let i = 0; i < cardElement.length; i++) {
