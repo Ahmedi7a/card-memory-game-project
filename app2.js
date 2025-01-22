@@ -78,7 +78,7 @@ function checkMatch() {
         attemptE.textContent = `Attempts left: ${countAttempt}/6`
 
         if (countAttempt === 6) {
-            MessageE.textContent = `You lost`
+            MessageE.textContent = `You lost, try again`
             resetButton.disabled = false;
             blockBoard = true;
             for (let i = 0; i < cardElement.length; i++) {
@@ -123,7 +123,7 @@ function resetBoard() {
 function checkWin() {
     const matchedCards = document.querySelectorAll('.memory-card .hide');
     if (matchedCards.length === cardElement.length) {
-        MessageE.textContent = `congratulations!!!!!, You Win. Your memory is good`
+        MessageE.textContent = `congratulations!!!, You Win. Your memory is good`
         nextLevelB.disabled=false;
         resetButton.disabled = false;
         blockBoard = true;
@@ -147,7 +147,7 @@ function resetGame() {
     blockBoard = false;
     resetButton.disabled = true;
     attemptE.textContent = `Attempts left: ${countAttempt}/6`;
-    MessageE.textContent = `Lets see if you can win`;
+    MessageE.textContent = `Level 2`;
     shuffle();
 
     for (let i = 0; i < cardElement.length; i++) {
