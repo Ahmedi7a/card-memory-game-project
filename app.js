@@ -1,20 +1,3 @@
-// const cardsArray = [
-//     { alt: "watermelon", imageUrl: "./images/fruit_1.jpg" },
-//     { alt: "watermelon", imageUrl: "./images/fruit_1.jpg" },
-//     { alt: "fruit2", imageUrl: "./images/fruit_2.jpg" },
-//     { alt: "fruit2", imageUrl: "./images/fruit_2.jpg" },
-//     { alt: "fruit3", imageUrl: "./images/fruit_3.jpg" },
-//     { alt: "fruit3", imageUrl: "./images/fruit_3.jpg" },
-//     { alt: "fruit4", imageUrl: "./images/fruit_4.jpg" },
-//     { alt: "fruit4", imageUrl: "./images/fruit_4.jpg" },
-//     { alt: "fruit5", imageUrl: "./images/fruit_5.jpg" },
-//     { alt: "fruit5", imageUrl: "./images/fruit_5.jpg" },
-//     { alt: "fruit6", imageUrl: "./images/fruit_6.jpg" },
-//     { alt: "fruit6", imageUrl: "./images/fruit_6.jpg" },
-// ];
-
-
-// func alt, url
 
 /*-------------------------------- Constants --------------------------------*/
 let firstCard, secondCard;
@@ -24,13 +7,11 @@ let countAttempt = 0;
 
 /*------------------------ Cached Element References ------------------------*/
 const cardElement = document.querySelectorAll('.memory-card');
-// console.log(cardElement.length)
 const attemptE = document.querySelector('.attempt');
 const MessageE = document.querySelector('.message');
 const resetButton = document.querySelector('.reset-game');
 const backCard = document.querySelectorAll('.back-face');
 const nextLevelB= document.querySelector('.next-level')
-// console.log(resetButton)
 
 /*----------------------------- Event Listeners -----------------------------*/
 for (let i = 0; i < cardElement.length; i++) {
@@ -55,7 +36,6 @@ function flipCard(event) {
     }
     event.target.classList.add('hide');
     const clickedCard = event.target;
-    // console.log(clickedCard)
     if (!firstCard) {
         // If no card is flipped, set the first card
         firstCard = clickedCard;
@@ -101,7 +81,6 @@ function checkMatch() {
             }
             return
         }
-        // console.log(countAttempt)
         unflipCards();
     }
 
